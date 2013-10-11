@@ -1,0 +1,363 @@
+header,
+aside,
+main .hero,
+footer {
+	width: 90%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+header {
+	text-align: center;
+	h1 {
+		margin: 0;
+		padding: 20px;
+		color: #777;
+		font-size: 140%;
+		text-indent: 50px;
+		position: relative;
+		&:before {
+			$logo-size : 40px;
+			background: transparent left center no-repeat url($logo-feedly);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -130px;
+			margin-top: -20px;
+			width: $logo-size;
+			height: $logo-size;
+			background-size: $logo-size $logo-size;
+			content: ' ';
+			display: block;
+		}
+	}
+}
+
+main {
+	background-color: $tertiary-color;
+	margin-bottom: 20px;
+}
+	#presentation {
+		padding: 30px 0;
+		text-align: center;
+		@include clearfix();
+		h3 {
+			color: white;
+			line-height: 1.3em;
+			margin-bottom: 20px;
+		}
+	}
+	#social {
+		border-top: 3px solid darken($tertiary-color, 15%);
+		background-color: #eee;
+		padding: 10px;
+		text-align: center;
+		h4 {
+			
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+			li {
+				display: inline-block;
+				width: 45%;
+				margin-bottom: 10px;
+				a {
+					display: block;
+					height: 40px;
+					line-height: 40px;
+					text-decoration: none;
+					color: $white;
+					@include border-radius($button-radius);
+					margin: 0 3px;
+					position: relative;
+					text-indent: 45px;
+					padding-right: 15px;
+					border-bottom-width: $button-depth;
+					border-bottom-style: solid;
+					&:before {
+						@include border-radius($button-radius);
+						content: ' ';
+						display: block;
+						position: absolute;
+						height: 40px;
+						width: 40px;
+						z-index: 3;
+						background-size: 25px 25px;
+						background-color: transparent;
+						background-position: center center;
+						background-repeat: no-repeat;
+						display: block;
+						color: transparent;
+						text-shadow: none;
+						background-color: transparent;
+					}
+					&.facebook {
+						background-color: $facebook-color;
+						border-bottom-color: darken($facebook-color, $button-line);
+						&:before {
+							background-color: $facebook-color;
+							background-image: url($icon-facebook);
+						}
+						&:hover {
+							background-color: darken($facebook-color, $button-hover);
+							border-bottom-color: darken(darken($facebook-color, $button-line), $button-hover);
+							&:before {
+								background-color: darken($facebook-color, $button-hover);
+							}
+						}
+					}
+					&.twitter {
+						background-color: $twitter-color;
+						border-bottom-color: darken($twitter-color, $button-line);
+						&:before {
+							background-color: $twitter-color;
+							background-image: url($icon-twitter);
+						}
+						&:hover {
+							background-color: darken($twitter-color, $button-hover);
+							border-bottom-color: darken(darken($twitter-color, $button-line), $button-hover);
+							&:before {
+								background-color: darken($twitter-color, $button-hover);
+							}
+						}
+					}
+					&.gplus {
+						background-color: $gplus-color;
+						border-bottom-color: darken($gplus-color, $button-line);
+						&:before {
+							background-color: $gplus-color;
+							background-image: url($icon-gplus);
+						}
+						&:hover {
+							background-color: darken($gplus-color, $button-hover);
+							border-bottom-color: darken(darken($gplus-color, $button-line), $button-hover);
+							&:before {
+								background-color: darken($gplus-color, $button-hover);
+							}
+						}
+					}
+					&.github {
+						background-color: $github-color;
+						border-bottom-color: darken($github-color, $button-line);
+						&:before {
+							background-color: $github-color;
+							background-image: url($icon-github);
+						}
+						&:hover {
+							background-color: darken($github-color, $button-hover);
+							border-bottom-color: darken(darken($github-color, $button-line), $button-hover);
+							&:before {
+								background-color: darken($github-color, $button-hover);
+							}
+						}
+					}
+					&:active {
+						border-bottom-width: $button-press;
+						@include translate(0, $button-depth - $button-press);
+					}
+					&:hover {
+						
+					}
+				}
+			}
+		}
+	}
+
+	.bookmarklet {
+		a {
+			display: block;
+			position: relative;
+			width: 80%;
+			max-width: 350px;
+			font-size: 140%;
+			font-weight: bold;
+			padding: 10px 20px;
+			margin: 0 auto;
+			margin-bottom: 20px;
+			color: $secondary-color;
+			background-color: darken($tertiary-color, 15%);
+			border-bottom: $button-depth solid darken($tertiary-color, $button-line);
+			text-decoration: none;
+			cursor:grab;
+			cursor:-moz-grab;
+			cursor:-webkit-grab;
+			@include border-radius($button-radius);
+			span {
+				display: none;
+			}
+			&[data-text] {
+				vertical-align: middle;
+				&:after {
+					content: attr(data-text);
+				}
+			}
+			&:hover {
+				background-color: darken(darken($tertiary-color, 15%),$button-hover);
+				border-bottom: $button-depth solid darken(darken($tertiary-color, $button-line),$button-hover);
+			}
+			&.drag {
+				cursor:grabbing;
+				cursor:-moz-grabbing;
+				cursor:-webkit-grabbing;
+			}		
+		}
+		small {
+			color: $secondary-color;
+		}
+	}
+	
+	#howto {
+		position: relative;
+		height: 240px;
+		display: none;
+		.ui,
+		.button,
+		.arrow {
+			background-image: url($img-browser);
+			background-image: url($img-browser);
+			background-color: transparent;
+			background-repeat: no-repeat;
+			position: absolute;
+			display: block;
+
+		}
+		.ui {
+/* 			@include box-shadow(0 0 100px 0 #000); */
+			background-position: right top;
+			top: 60px;
+			left: 40px;
+			width: 421px;
+			height: 210px;
+			z-index: 0;
+		}
+		.arrow {
+			background-position: 0 0;
+			left: -200px;
+			bottom: 75px;
+			width: 30px;
+			height: 68px;
+			z-index: 30;
+			opacity: 0;
+		}
+		.pulse {
+			border: 2px solid rgba(0,0,0,0.5);
+			height: 18px;
+			width: 18px;
+			position: absolute;
+			left: 97px;
+			bottom: 124px;
+			@include border-radius(50px);
+			opacity: 0;
+			z-index: 20;
+		}
+		.button {
+			height: 22px;
+			width: 133px;
+			position: absolute;
+			left: 44px;
+			bottom: 124px;
+			background-position: left -220px;
+			z-index: 10;
+			opacity: 0;
+		}
+		&.animate {
+			.button {
+				@include animation(button-show $animation-duration linear);
+				opacity: 1;
+			}
+			.pulse {
+				@include animation(pulsate $animation-duration ease-out);
+			}
+			.arrow {
+				@include animation(
+					arrow-move $animation-duration linear, 
+					arrow-opacity $animation-duration linear
+				);
+			}
+		}
+	}
+	@include keyframes(button-show) {
+		
+		0% {
+			opacity: 0;
+		}
+		65% {
+			opacity: 0;
+		}
+		75% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@include keyframes(pulsate) {
+		
+		0% {
+			@include scale(0.1);
+			opacity: 0;
+		}
+		45% {
+			@include scale(0.1);
+			opacity: 0;
+		}
+		50% {
+			@include scale(1);
+			opacity: 1;
+		}
+		60% {
+			@include scale(3);
+			opacity: 0;
+		}
+		100% {
+			@include scale(3);
+			opacity: 0;
+		}
+	}
+
+	@include keyframes(arrow-move) {
+		0% {
+			left: -200px;
+			bottom: 75px;
+		}
+		10% {
+			left: -200px;
+			bottom: 75px;
+		}
+		40% {
+			left: 108px;
+			bottom: 101px;
+		}
+		100% {
+			left: 108px;
+			bottom: 101px;
+		}
+	}
+	@include keyframes(arrow-opacity) {
+		0% {
+			opacity: 0;
+		}
+		10% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 1;
+		}
+		55% {
+			opacity: 0;
+		}
+	}
+aside {
+	section {
+		margin-bottom: 30px;
+	}
+}
+
+footer {
+	font-size: 80%;
+	color: lighten($primary-color, 40%);
+}

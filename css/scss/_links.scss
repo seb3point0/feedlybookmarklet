@@ -1,0 +1,7 @@
+// Text links
+a{
+	color:$tertiary-color;
+	&:hover,&:focus{
+		text-decoration:none;
+	}
+}
