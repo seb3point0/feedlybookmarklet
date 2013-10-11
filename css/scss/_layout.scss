@@ -7,6 +7,10 @@ footer {
 	margin: 0 auto;
 }
 
+$navCounterHeight: 20px;
+$navCounterDefaultColor: #e23442;
+$navCounterColors: green #75a940, blue #3b8de2;
+
 header {
 	text-align: center;
 	h1 {
@@ -14,7 +18,7 @@ header {
 		padding: 20px;
 		color: #777;
 		font-size: 140%;
-		text-indent: 50px;
+		text-indent: 45px;
 		position: relative;
 		&:before {
 			$logo-size : 40px;
@@ -22,7 +26,7 @@ header {
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			margin-left: -130px;
+			margin-left: -125px;
 			margin-top: -20px;
 			width: $logo-size;
 			height: $logo-size;
@@ -45,6 +49,28 @@ main {
 			color: white;
 			line-height: 1.3em;
 			margin-bottom: 20px;
+			position: relative;
+			&:after {
+				content: 'Beta';
+				font-size: 11px;
+				text-transform: uppercase;
+				padding: 2px;
+				position: absolute;
+				left: 50%;
+				top: 10px;
+				height: 35px;
+				width: 35px;
+				margin-left: 140px;
+				line-height: 35px;
+				font-weight: normal;
+				color: $tertiary-color;
+				text-indent: 0;
+				text-align: center;
+				background: $white;;
+				@include border-radius(50px);
+				@include rotate(15deg);
+				display: block;
+			}
 		}
 	}
 	#social {
