@@ -1,7 +1,6 @@
 .sass-cache
 .DS_Store
 _files/
-_src/
 .sass-cache/
 compass_app_log.txt
 config.rb
